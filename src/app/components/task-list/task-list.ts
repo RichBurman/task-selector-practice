@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { TaskDetail } from '../task-detail/task-detail';
 
 @Component({
@@ -8,5 +8,11 @@ import { TaskDetail } from '../task-detail/task-detail';
   styleUrl: './task-list.css',
 })
 export class TaskList {
+  tasks = signal([
+    { id: 1, title: 'Task 1', description: 'Description for Task 1' },
+    { id: 2, title: 'Task 2', description: 'Description for Task 2' },
+    { id: 3, title: 'Task 3', description: 'Description for Task 3' },
+  ]);
 
+  
 }

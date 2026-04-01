@@ -7,4 +7,4 @@
 </ul>
 
 <p>{{ selectedTask()?.title}}</p>
-<app-task-detail></app-task-detail>
+<app-task-detail [task]="selectedTask()" (clearTask)="onTaskCleared()"></app-task-detail>

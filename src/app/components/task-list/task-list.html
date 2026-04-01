@@ -1,1 +1,7 @@
-<p>task-list works!</p>
+<h2>Task List</h2>
+
+<ul>
+    @for (task of tasks(); track task.id) {
+    <li>{{ task.title }}</li>
+    }
+</ul>

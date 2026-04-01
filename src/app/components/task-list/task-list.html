@@ -1,10 +1,24 @@
-<h2>Task List</h2>
+<h2>Task List (Parent Component)</h2>
+
+<p>
+  This is the <strong>parent component</strong>. It owns the data using a 
+  <code>signal</code> called <code>selectedTask</code>.
+</p>
+
+<p>
+  When you click a task, the parent updates the signal. That value is then 
+  passed <strong>down</strong> to the child component using 
+  <code>@Input()</code>.
+</p>
 
 <ul>
     @for (task of tasks(); track task.id) {
-    <li (click)="selectTask(task)">{{ task.title }}</li>
+    <li (click)="selectTask(task)" [class.selected]="selectedTask()?.id === task.id">
+        {{ task.title }}
+    </li>
     }
 </ul>
 
-<p>{{ selectedTask()?.title}}</p>
+<p><strong>Selected Task Signal Value:</strong> {{ selectedTask() | json }}</p>
+<p><em>This shows the live value of the signal in the parent component.</em></p>
 <app-task-detail [task]="selectedTask()" (clearTask)="onTaskCleared()"></app-task-detail>

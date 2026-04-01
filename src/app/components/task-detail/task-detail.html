@@ -1,9 +1,42 @@
+<h3>📦 Child Component (TaskDetail)</h3>
+
+<p>
+  This is the <strong>child component</strong>.
+</p>
+
+<p>
+  It receives data from the parent using <code>@Input()</code> 
+  and sends events back using <code>@Output()</code>.
+</p>
+
+<p>
+  <strong>@Input()</strong> = data comes in<br>
+  <strong>@Output()</strong> = events go out
+</p>
+
 @if (task) {
-    <h3>Selected Task in the Task Detail Component</h3>
-    <p>{{ task.title }} This is being sent to the task detail via [task]="selectedTask()" in the task-list html </p>
+  <div>
+    <h3>Selected Task</h3>
+
+    <p>
+      This data was passed from the parent using:
+      <br>
+      <code>[task]="selectedTask()"</code>
+    </p>
+
+    <p>
+      <strong>Task title:</strong> {{ task.title }}
+    </p>
 
     <button (click)="clearSelectedTask()">Clear Selection</button>
-    <p>The selected task can be cleared using the button above. This is sent to the parent component (TaskList) via the clearTask output event.</p>
+
+    <p>
+      Clicking this button emits an event to the parent using 
+      <code>@Output()</code>, which clears the selected task.
+    </p>
+  </div>
 } @else {
-    <p>No task currently selected!</p>
+  <p>
+    No task is selected. Click a task in the parent component to send data here.
+  </p>
 }

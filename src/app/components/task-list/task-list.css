@@ -1,0 +1,48 @@
+h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+li {
+  padding: 12px 16px;
+  margin: 8px 0;
+  background: #f1f3f5;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+/* Hover effect */
+li:hover {
+  background: #e9ecef;
+  transform: translateY(-2px);
+}
+
+/* Active click */
+li:active {
+  transform: scale(0.98);
+}
+
+/* 👇 Selected state (NEW) */
+.selected {
+  background: #4dabf7;
+  color: white;
+  border: 1px solid #1c7ed6;
+}
+
+/* Debug text */
+p {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: #555;
+}

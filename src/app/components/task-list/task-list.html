@@ -2,6 +2,9 @@
 
 <ul>
     @for (task of tasks(); track task.id) {
-    <li>{{ task.title }}</li>
+    <li (click)="selectTask(task)">{{ task.title }}</li>
     }
 </ul>
+
+<p>{{ selectedTask()?.title}}</p>
+<app-task-detail></app-task-detail>

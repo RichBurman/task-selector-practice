@@ -14,5 +14,9 @@ export class TaskList {
     { id: 3, title: 'Task 3', description: 'Description for Task 3' },
   ]);
 
-  
+  selectedTask = signal<{ id: number; title: string } | null>(null);
+
+  selectTask(task: { id: number; title: string }) {
+    this.selectedTask.set(task);
+  }
 }

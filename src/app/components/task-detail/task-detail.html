@@ -1,3 +1,9 @@
 @if (task) {
-    <h3>Selected Task</h3>
+    <h3>Selected Task in the Task Detail Component</h3>
+    <p>{{ task.title }} This is being sent to the task detail via [task]="selectedTask()" in the task-list html </p>
+
+    <button (click)="clearSelectedTask()">Clear Selection</button>
+    <p>The selected task can be cleared using the button above. This is sent to the parent component (TaskList) via the clearTask output event.</p>
+} @else {
+    <p>No task currently selected!</p>
 }

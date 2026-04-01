@@ -19,4 +19,8 @@ export class TaskList {
   selectTask(task: { id: number; title: string }) {
     this.selectedTask.set(task);
   }
+
+  onTaskCleared() {
+    this.selectedTask.set(null);
+  }
 }
